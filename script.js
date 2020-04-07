@@ -12,26 +12,28 @@ function fortune() {
   var name = document.getElementById("fortune-input").value;
   var fortuneOutputWords = document.getElementById("fortune-output-words").value;
 
-  var fortuneOutputWords = ["The early bird gets the worm, but the second mouse gets the cheese.", "Be on the alert to recognize your prime at whatever time of your life it may occur.", "Your road to glory will be rocky, but fulfilling.", "Courage is not simply one of the virtues, but the form of every virtue at the testing point."];
+  var fortuneArray = ["The early bird gets the worm, but the second mouse gets the cheese.", "Be on the alert to recognize your prime at whatever time of your life it may occur.", "Your road to glory will be rocky, but fulfilling.", "Courage is not simply one of the virtues, but the form of every virtue at the testing point."];
 
-  var randomFortune = fortuneOutputWords[Math.floor(Math.random()*fortuneOutputWords.length)];
+  var randomFortune = fortuneArray[Math.floor(Math.random()*fortuneArray.length)];
 
-  document.getElementById("fortune-output").innerHTML = (name + ", your fortune is: " + randomFortune);
+  document.getElementById("fortune-output-words").innerHTML = (name + ", your fortune is: " + randomFortune);
 }
 
-var fortuneOutput = document.getElementById("fortune-output-text");
-fortuneOutput.addEventListener("click", restyle)
+var fortuneOutputText = document.getElementById("fortune-output-text");
+document.addEventListener("click", restyle)
 
 function restyle() {
-  var fontSize = Math.floor(Math.random() * 42);
+  var fontSize = Math.floor(Math.random() * 75);
   var col1 = Math.floor(Math.random() * 255);
   var col2 = Math.floor(Math.random() * 255);
   var col3 = Math.floor(Math.random() * 255);
-  var bG = Math.floor(Math.random() * 255);
+  var bGcol1 = Math.floor(Math.random() * 255);
+  var bGcol2 = Math.floor(Math.random() * 255);
+  var bGcol3 = Math.floor(Math.random() * 255);
 
-  fortuneOutput.style.fontSize = fontSize + "px";
-  fortuneOutput.style.color = "rgb(" + col1 + "," + col2 + "," + col3 + ")";
-  fortuneOutput.style.background = "rgb(" + bG + "," + col2 + "," + col3 + ")";
+  fortuneOutputText.style.fontSize = fontSize + "px";
+  fortuneOutputText.style.color = "rgb(" + col1 + "," + col2 + "," + col3 + ")";
+  fortuneOutputText.style.background = "rgb(" + bGcol1 + "," + bGcol2 + "," + bGcol3 + ")";
 }
 
 restyle();
