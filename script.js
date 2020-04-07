@@ -10,17 +10,17 @@ document.getElementById("fortune-button").addEventListener("click", fortune);
 
 function fortune() {
   var name = document.getElementById("fortune-input").value;
-  var fortuneOutput = document.getElementById("fortune-output-text").value;
+  var fortuneOutputWords = document.getElementById("fortune-output-words").value;
 
-  var fortuneOutput = ["The early bird gets the worm, but the second mouse gets the cheese.", "Be on the alert to recognize your prime at whatever time of your life it may occur.", "Your road to glory will be rocky, but fulfilling.", "Courage is not simply one of the virtues, but the form of every virtue at the testing point."];
+  var fortuneOutputWords = ["The early bird gets the worm, but the second mouse gets the cheese.", "Be on the alert to recognize your prime at whatever time of your life it may occur.", "Your road to glory will be rocky, but fulfilling.", "Courage is not simply one of the virtues, but the form of every virtue at the testing point."];
 
-  var randomFortune = fortuneOutput[Math.floor(Math.random()*fortuneOutput.length)];
+  var randomFortune = fortuneOutputWords[Math.floor(Math.random()*fortuneOutputWords.length)];
 
   document.getElementById("fortune-output").innerHTML = (name + ", your fortune is: " + randomFortune);
 }
 
 var fortuneOutput = document.getElementById("fortune-output-text");
-fortuneOutput.addEventListener("onclick", restyle)
+fortuneOutput.addEventListener("click", restyle)
 
 function restyle() {
   var fontSize = Math.floor(Math.random() * 42);
