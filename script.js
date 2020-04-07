@@ -16,5 +16,5 @@ function fortune() {
 
   var randomFortune = fortuneOutput[Math.floor(Math.random()*fortuneOutput.length)];
 
-  alert(name + ", your fortune is: " + randomFortune);
+  document.body.innerHTML = (name + ", your fortune is: " + randomFortune);
 }
